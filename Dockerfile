@@ -23,7 +23,8 @@ RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/202
 
 # 下载 Xray
 RUN wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip temp.zip web && \
+    unzip temp.zip xray && \
+    mv /app/xray /app/web && \
     chmod +x /app/web && \
     rm temp.zip
 
