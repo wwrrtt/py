@@ -7,7 +7,7 @@
       "settings": {
         "clients": [
           {
-            "id": "ee1feada-4e2f-4dc3-aaa6-f97aeed0286b",
+            "id": "${UUID}",
             "alterId": 0
           }
         ]
@@ -15,7 +15,7 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-        "path": "/ray272449844"
+        "path": "${VMESS_WSPATH}"
         }
       }
     }
