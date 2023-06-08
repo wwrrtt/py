@@ -1,7 +1,4 @@
 {
-  "log": {
-    "loglevel": "debug"
-  },
   "inbounds": [
     {
       "port": 8080,
@@ -18,14 +15,15 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "$VMESS_WSPATH"
+        "path": "$VMESS_WSPATH"
         }
       }
     }
   ],
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {}
     }
   ]
 }
