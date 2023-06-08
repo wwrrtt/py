@@ -17,15 +17,16 @@ RUN pip install --upgrade pip
 COPY main.py /app/main.py
 COPY config.json /app/config.json
 
-# 安装 Cloudflare Argo
+# 下载 Cloudflare Argo 隧道
 RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/2023.5.1/cloudflared-linux-amd64 && \
-    chmod +x argo
+    chmod +x /app/argo
 
-# 安装 Xray
+# 下载 Xray
 RUN wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
     unzip temp.zip xray && \
-    rm -f temp.zip && \
-    chmod +x xray
+    mv /xray /app/xray && \
+    chmod +x /app/xray && \
+    rm temp.zip
 
 # 安装 Python 依赖
 COPY requirements.txt /app/requirements.txt
