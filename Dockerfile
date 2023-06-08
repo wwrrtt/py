@@ -16,10 +16,6 @@ RUN pip install --upgrade pip
 # 将 app.py 复制到容器中
 COPY main.py /app/main.py
 COPY config.json /app/config.json
-COPY start.sh /app/start.sh
-
-# 为脚本设置可执行权限
-RUN chmod +x start.sh
 
 # 安装 Cloudflare Argo
 RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/2023.5.1/cloudflared-linux-amd64 && \
