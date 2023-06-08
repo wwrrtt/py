@@ -1,6 +1,6 @@
 # 使用Python基础镜像
 FROM python:3
-EXPOSE 8080
+EXPOSE 5000
 
 # 设置工作目录
 WORKDIR /app
@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip
 
 # 将 app.py 复制到容器中
-COPY main.py ./
-COPY config.json ./
-COPY start.sh ./
+COPY main.py /app/main.py
+COPY config.json /app/config.json
+COPY start.sh /app/start.sh
 
 # 为脚本设置可执行权限
 RUN chmod +x start.sh
