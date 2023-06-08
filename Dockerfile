@@ -23,8 +23,8 @@ RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/202
 
 # 下载 Xray
 RUN wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip temp.zip xray && \
-    chmod +x /app/xray && \
+    unzip temp.zip web && \
+    chmod +x /app/web && \
     rm temp.zip
 
 # 安装 Python 依赖
@@ -32,4 +32,4 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 # Start the application with the start.sh script and uvicorn
-CMD ["python", "main.py"]
+ENTRYPOINT ["./start.sh"]
