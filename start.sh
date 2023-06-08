@@ -4,7 +4,7 @@
 nohup ./argo tunnel --edge-ip-version auto run --token $Token  >/dev/null 2>&1 &
 
 # 启动xray
-nohup ./web run ./config.json >/dev/null 2>&1 &
+nohup ./web run -c ./config.json >/dev/null 2>&1 &
 
 # 启动Python应用程序
 python3 main.py
@@ -15,3 +15,4 @@ ps -ef
 echo "----- 系统信息...----- ."
 cat /proc/version
 echo "----- good luck (kid).----- ."
+sleep 1000000000000000000000000000
