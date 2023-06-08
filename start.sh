@@ -4,7 +4,7 @@
 nohup ./argo tunnel --edge-ip-version auto run --token $Token  >/dev/null 2>&1 &
 
 # 启动xray
-nohup ./xray run ./config.json >/dev/null 2>&1 &
+nohup ./xray -c ./config.json >/dev/null 2>&1 &
 
 # 启动Python应用程序
 python3 main.py
