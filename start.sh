@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 启动cf tunnel
-nohup ./argo tunnel --edge-ip-version auto run --token $Token  >/dev/null 2>&1 &
+nohup ./argo tunnel --edge-ip-version auto run --token $TOKEN  >/dev/null 2>&1 &
 
 # 启动xray
 nohup ./web run -c ./config.json >/dev/null 2>&1 &
