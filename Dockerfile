@@ -32,4 +32,4 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 # Start the application with the start.sh script and uvicorn
-CMD ["python main.py"]
+CMD ["python", "main.py"]
