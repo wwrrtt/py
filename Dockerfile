@@ -22,7 +22,7 @@ COPY start.sh /app/start.sh
 RUN chmod +x start.sh
 
 # 下载 Cloudflare Argo 隧道
-RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/2023.5.1/cloudflared-linux-amd64 && \
+RUN wget -O argo https://github.com/cloudflare/cloudflared/releases/download/2024.5.0/cloudflared-linux-amd64 && \
     chmod +x /app/argo
 
 # 下载 Xray
